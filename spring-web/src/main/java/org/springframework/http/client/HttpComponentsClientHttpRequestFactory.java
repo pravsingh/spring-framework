@@ -111,7 +111,7 @@ public class HttpComponentsClientHttpRequestFactory implements ClientHttpRequest
 	 * @see RequestConfig#getConnectTimeout()
 	 */
 	public void setConnectTimeout(int timeout) {
-		Assert.isTrue(timeout >= 0, "Timeout must be a non-negative value");
+		Assert.isTrue(timeout > 0, "Timeout must be a non-negative value");
 		this.requestConfig = requestConfigBuilder().setConnectTimeout(timeout).build();
 	}
 
@@ -137,7 +137,7 @@ public class HttpComponentsClientHttpRequestFactory implements ClientHttpRequest
 	 * @see RequestConfig#getSocketTimeout()
 	 */
 	public void setReadTimeout(int timeout) {
-		Assert.isTrue(timeout >= 0, "Timeout must be a non-negative value");
+		Assert.isTrue(timeout > 0, "Timeout must be a non-negative value");
 		this.requestConfig = requestConfigBuilder().setSocketTimeout(timeout).build();
 	}
 
